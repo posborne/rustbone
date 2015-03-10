@@ -1,0 +1,9 @@
+# Editor Files
+*~
+\#*\#
+
+# Yocto build artifacts
+build*/tmp
+build*/cache
+build*/conf/sanity_info
+build*/bitbake.lock
