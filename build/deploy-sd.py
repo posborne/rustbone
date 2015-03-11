@@ -13,11 +13,18 @@ THIS_DIR = os.path.dirname(__file__)
 DEPLOY_DIR = os.path.join(THIS_DIR, "tmp/deploy/images/beaglebone")
 MLO = os.path.join(DEPLOY_DIR, "MLO-beaglebone")
 UBOOT = os.path.join(DEPLOY_DIR, "u-boot.img")
+UIMAGE = os.path.join(DEPLOY_DIR, "uImage-beaglebone.bin")
+DTB = os.path.join(DEPLOY_DIR, "uImage-am335x-boneblack.dtb")
 
 # Files that must be moved to the boot volume
 BOOT_MAPPING = [
     (MLO, "MLO"),
     (UBOOT, "u-boot.img"),
+]
+
+ROOT_MAPPING = [
+    (UIMAGE, "boot/uImage"),
+    (DTB, "boot/am335x-boneblack.dtb"),
 ]
 
 
@@ -51,9 +58,16 @@ def install_root(args):
     sys.stdout.flush()
     subprocess.check_call([
         "tar", "xjvf",
-        os.path.join(DEPLOY_DIR, "core-image-base-beaglebone.tar.bz2"),
+        os.path.join(DEPLOY_DIR, "rustbone-image-beaglebone.tar.bz2"),
         "-C", args.rootmnt,
     ])
+
+    # Write additional files
+    for src, dstrelpath in ROOT_MAPPING:
+        dst = os.path.join(args.rootmnt, dstrelpath)
+        print "{} -> {}".format(src, dst)
+        shutil.copy2(src, dst)
+
     print "Done"
 
 
