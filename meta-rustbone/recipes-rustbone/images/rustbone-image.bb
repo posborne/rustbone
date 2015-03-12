@@ -7,6 +7,7 @@ inherit core-image
 
 IMAGE_INSTALL += " \
    rust-hello-world \
+   rust-pstree \
 "
 
 IMAGE_ROOTFS_SIZE ?= "8192"
