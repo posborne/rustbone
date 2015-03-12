@@ -3,7 +3,7 @@
 	url = git://git.yoctoproject.org/poky.git
 [submodule "meta-rust"]
 	path = meta-rust
-	url = git@github.com:jmesmon/meta-rust
+	url = git@github.com:posborne/meta-rust.git
 [submodule "meta-oe"]
 	path = meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
