@@ -5,9 +5,12 @@ LICENSE = "MIT"
 
 inherit core-image
 
+IMAGE_FEATURES += "ssh-server-dropbear"
+
 IMAGE_INSTALL += " \
    rust-hello-world \
    rust-pstree \
+   i2c-tools \
 "
 
 IMAGE_ROOTFS_SIZE ?= "8192"
