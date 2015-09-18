@@ -13,8 +13,8 @@ THIS_DIR = os.path.dirname(__file__)
 DEPLOY_DIR = os.path.join(THIS_DIR, "tmp/deploy/images/beaglebone")
 MLO = os.path.join(DEPLOY_DIR, "MLO-beaglebone")
 UBOOT = os.path.join(DEPLOY_DIR, "u-boot.img")
-UIMAGE = os.path.join(DEPLOY_DIR, "uImage-beaglebone.bin")
-DTB = os.path.join(DEPLOY_DIR, "uImage-am335x-boneblack.dtb")
+ZIMAGE = os.path.join(DEPLOY_DIR, "zImage-beaglebone.bin")
+DTB = os.path.join(DEPLOY_DIR, "zImage-bbb-nh5cape.dtb")
 
 # Files that must be moved to the boot volume
 BOOT_MAPPING = [
@@ -23,7 +23,7 @@ BOOT_MAPPING = [
 ]
 
 ROOT_MAPPING = [
-    (UIMAGE, "boot/uImage"),
+    (ZIMAGE, "boot/zImage"),
     (DTB, "boot/am335x-boneblack.dtb"),
 ]
 

@@ -7,3 +7,9 @@
 [submodule "meta-oe"]
 	path = meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
+[submodule "meta-bbb"]
+	path = meta-bbb
+	url = https://github.com/jumpnow/meta-bbb.git
+[submodule "meta-qt5"]
+	path = meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5.git
